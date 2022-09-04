@@ -135,7 +135,7 @@ AimIcon.Position = UDim2.new(0.308510631, 0, 0.916827798, 0)
 AimIcon.Size = UDim2.new(0, 21, 0, 21)
 AimIcon.Image = "rbxassetid://10817510053"
 AimIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = true
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = true
 end)
 
 PrimoTopText_2.Name = "PrimoTopText"
@@ -161,7 +161,7 @@ antiaimIcon.Position = UDim2.new(0.378419429, 0, 0.916827798, 0)
 antiaimIcon.Size = UDim2.new(0, 21, 0, 21)
 antiaimIcon.Image = "rbxassetid://10817538890"
 antiaimIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
 end)
 
 PrimoTopText_3.Name = "PrimoTopText"
@@ -187,7 +187,7 @@ visualsIcon.Position = UDim2.new(0.449847996, 0, 0.916827798, 0)
 visualsIcon.Size = UDim2.new(0, 21, 0, 21)
 visualsIcon.Image = "rbxassetid://10817548580"
 visualsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
 end)
 
 PrimoTopText_4.Name = "PrimoTopText"
@@ -213,7 +213,7 @@ miscIcon.Position = UDim2.new(0.522796333, 0, 0.916827798, 0)
 miscIcon.Size = UDim2.new(0, 21, 0, 21)
 miscIcon.Image = "rbxassetid://10817566178"
 miscIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
 end)
 
 PrimoTopText_5.Name = "PrimoTopText"
@@ -239,7 +239,7 @@ skinsIcon.Position = UDim2.new(0.592705131, 0, 0.916827798, 0)
 skinsIcon.Size = UDim2.new(0, 21, 0, 21)
 skinsIcon.Image = "rbxassetid://10817574920"
 skinsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
 end)
 
 PrimoTopText_6.Name = "PrimoTopText"
@@ -265,7 +265,7 @@ ScriptsIcon.Position = UDim2.new(0.65653491, 0, 0.916827857, 0)
 ScriptsIcon.Size = UDim2.new(0, 26, 0, 21)
 ScriptsIcon.Image = "rbxassetid://10817593768"
 ScriptsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
+	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
 end)
 
 PrimoTopText_7.Name = "PrimoTopText"
