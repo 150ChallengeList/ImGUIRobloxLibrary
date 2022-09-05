@@ -37,21 +37,47 @@ local AimbotTap = Instance.new("Folder")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local aimbot = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
+local Active = Instance.new("TextLabel")
+local AutoFire = Instance.new("Folder")
+local ToggleOnAutoFire = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local ToggleOffAutoFire = Instance.new("ImageLabel")
+local TextButton = Instance.new("TextButton")
 local exploits = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
+local Active_2 = Instance.new("TextLabel")
 local misc_2 = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
+local Active_3 = Instance.new("TextLabel")
 local debug = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
+local Active_4 = Instance.new("TextLabel")
 local fakeping = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
+local Active_5 = Instance.new("TextLabel")
 local indicators = Instance.new("Frame")
 local UICorner_7 = Instance.new("UICorner")
+local Active_6 = Instance.new("TextLabel")
 local GeneralActive = Instance.new("TextButton")
-local Active = Instance.new("TextLabel")
+local Active_7 = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
+local KeyBinds = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local RedLine = Instance.new("Frame")
+local TopRound = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
+local TopFix = Instance.new("Frame")
+local PrimoTopText_8 = Instance.new("TextLabel")
 
 --Properties:
+
+local toggleUiKey = Enum.KeyCode.RightShift
+
+if toggleUiKey and MainFrame.Visible == true then
+	MainFrame.Visible = false
+elseif toggleUiKey and MainFrame.Visible == false then
+	MainFrame.Visible = true
+end
 
 ScreenGui.Parent = game.CoreGui
 
@@ -60,6 +86,7 @@ MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
 MainFrame.Position = UDim2.new(0.00741516799, 0, 0.35061726, 0)
 MainFrame.Size = UDim2.new(0, 658, 0, 517)
+MainFrame.Draggable = true
 
 UICorner.Parent = MainFrame
 
@@ -84,7 +111,7 @@ PrimoTopText.BackgroundTransparency = 1.000
 PrimoTopText.BorderSizePixel = 0
 PrimoTopText.Size = UDim2.new(0, 658, 0, 14)
 PrimoTopText.Font = Enum.Font.Code
-PrimoTopText.Text = "Primordial"
+PrimoTopText.Text = "primordial"
 PrimoTopText.TextColor3 = Color3.fromRGB(208, 210, 207)
 PrimoTopText.TextSize = 10.000
 
@@ -134,9 +161,6 @@ AimIcon.BackgroundTransparency = 1.000
 AimIcon.Position = UDim2.new(0.308510631, 0, 0.916827798, 0)
 AimIcon.Size = UDim2.new(0, 21, 0, 21)
 AimIcon.Image = "rbxassetid://10817510053"
-AimIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = true
-end)
 
 PrimoTopText_2.Name = "PrimoTopText"
 PrimoTopText_2.Parent = Aimbot
@@ -160,9 +184,6 @@ antiaimIcon.BackgroundTransparency = 1.000
 antiaimIcon.Position = UDim2.new(0.378419429, 0, 0.916827798, 0)
 antiaimIcon.Size = UDim2.new(0, 21, 0, 21)
 antiaimIcon.Image = "rbxassetid://10817538890"
-antiaimIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
-end)
 
 PrimoTopText_3.Name = "PrimoTopText"
 PrimoTopText_3.Parent = AntiAim
@@ -186,9 +207,6 @@ visualsIcon.BackgroundTransparency = 1.000
 visualsIcon.Position = UDim2.new(0.449847996, 0, 0.916827798, 0)
 visualsIcon.Size = UDim2.new(0, 21, 0, 21)
 visualsIcon.Image = "rbxassetid://10817548580"
-visualsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
-end)
 
 PrimoTopText_4.Name = "PrimoTopText"
 PrimoTopText_4.Parent = Visuals
@@ -212,9 +230,6 @@ miscIcon.BackgroundTransparency = 1.000
 miscIcon.Position = UDim2.new(0.522796333, 0, 0.916827798, 0)
 miscIcon.Size = UDim2.new(0, 21, 0, 21)
 miscIcon.Image = "rbxassetid://10817566178"
-miscIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
-end)
 
 PrimoTopText_5.Name = "PrimoTopText"
 PrimoTopText_5.Parent = misc
@@ -238,9 +253,6 @@ skinsIcon.BackgroundTransparency = 1.000
 skinsIcon.Position = UDim2.new(0.592705131, 0, 0.916827798, 0)
 skinsIcon.Size = UDim2.new(0, 21, 0, 21)
 skinsIcon.Image = "rbxassetid://10817574920"
-skinsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
-end)
 
 PrimoTopText_6.Name = "PrimoTopText"
 PrimoTopText_6.Parent = skins
@@ -264,9 +276,6 @@ ScriptsIcon.BackgroundTransparency = 1.000
 ScriptsIcon.Position = UDim2.new(0.65653491, 0, 0.916827857, 0)
 ScriptsIcon.Size = UDim2.new(0, 26, 0, 21)
 ScriptsIcon.Image = "rbxassetid://10817593768"
-ScriptsIcon.MouseButton1Down:Connect(function()
-	game:GetService("Players").ImAFoxPet.PlayerGui.ScreenGui.MainFrame.AimbotTap.ScrollingFrame.Visible = false
-end)
 
 PrimoTopText_7.Name = "PrimoTopText"
 PrimoTopText_7.Parent = scripts
@@ -302,6 +311,78 @@ aimbot.Size = UDim2.new(0, 248, 0, 117)
 
 UICorner_2.Parent = aimbot
 
+Active.Name = "Active"
+Active.Parent = aimbot
+Active.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active.BackgroundTransparency = 1.000
+Active.Size = UDim2.new(0, 64, 0, 33)
+Active.Font = Enum.Font.Code
+Active.LineHeight = 1.300
+Active.Text = "aimbot"
+Active.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active.TextSize = 13.000
+Active.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
+
+AutoFire.Name = "AutoFire"
+AutoFire.Parent = aimbot
+
+ToggleOnAutoFire.Name = "ToggleOnAutoFire"
+ToggleOnAutoFire.Parent = AutoFire
+ToggleOnAutoFire.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleOnAutoFire.Position = UDim2.new(0.0443548374, 0, 0.282051295, 0)
+ToggleOnAutoFire.Size = UDim2.new(0, 12, 0, 12)
+ToggleOnAutoFire.Visible = false
+ToggleOnAutoFire.Image = "rbxassetid://10829594389"
+
+TextLabel.Parent = AutoFire
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.125, 0, 0.282051295, 0)
+TextLabel.Size = UDim2.new(0, 55, 0, 12)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "autofire"
+TextLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
+TextLabel.TextSize = 14.000
+
+ToggleOffAutoFire.Name = "ToggleOffAutoFire"
+ToggleOffAutoFire.Parent = AutoFire
+ToggleOffAutoFire.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleOffAutoFire.Position = UDim2.new(0.0443548374, 0, 0.282051295, 0)
+ToggleOffAutoFire.Size = UDim2.new(0, 12, 0, 12)
+ToggleOffAutoFire.Image = "rbxassetid://10829616453"
+
+TextButton.Parent = AutoFire
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0.0443548374, 0, 0.282051295, 0)
+TextButton.Size = UDim2.new(0, 12, 0, 12)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+local on = false
+local togDe = false
+TextButton.MouseButton1Down:Connect(function()
+	
+	if not togDe then
+		togDe = true
+		on = not on
+		if on then
+			ToggleOnAutoFire.Visible = true
+			ToggleOffAutoFire.Visible = false
+			
+			KeyBinds.Visible = true
+		else
+			ToggleOnAutoFire.Visible = false
+			ToggleOffAutoFire.Visible = true
+			
+			KeyBinds.Visible = false
+		end
+		wait(1)
+		togDe = false
+	end
+end)
+
 exploits.Name = "exploits"
 exploits.Parent = ScrollingFrame
 exploits.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
@@ -309,6 +390,18 @@ exploits.Position = UDim2.new(0.429906309, 0, 0.0256166384, 0)
 exploits.Size = UDim2.new(0, 248, 0, 195)
 
 UICorner_3.Parent = exploits
+
+Active_2.Name = "Active"
+Active_2.Parent = exploits
+Active_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_2.BackgroundTransparency = 1.000
+Active_2.Size = UDim2.new(0, 74, 0, 33)
+Active_2.Font = Enum.Font.Code
+Active_2.LineHeight = 1.300
+Active_2.Text = "exploits"
+Active_2.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_2.TextSize = 13.000
+Active_2.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
 
 misc_2.Name = "misc"
 misc_2.Parent = ScrollingFrame
@@ -318,6 +411,18 @@ misc_2.Size = UDim2.new(0, 248, 0, 128)
 
 UICorner_4.Parent = misc_2
 
+Active_3.Name = "Active"
+Active_3.Parent = misc_2
+Active_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_3.BackgroundTransparency = 1.000
+Active_3.Size = UDim2.new(0, 50, 0, 33)
+Active_3.Font = Enum.Font.Code
+Active_3.LineHeight = 1.300
+Active_3.Text = "misc"
+Active_3.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_3.TextSize = 13.000
+Active_3.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
+
 debug.Name = "debug"
 debug.Parent = ScrollingFrame
 debug.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
@@ -325,6 +430,18 @@ debug.Position = UDim2.new(0.0302801654, 0, 0.556755781, 0)
 debug.Size = UDim2.new(0, 248, 0, 108)
 
 UICorner_5.Parent = debug
+
+Active_4.Name = "Active"
+Active_4.Parent = debug
+Active_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_4.BackgroundTransparency = 1.000
+Active_4.Size = UDim2.new(0, 57, 0, 33)
+Active_4.Font = Enum.Font.Code
+Active_4.LineHeight = 1.300
+Active_4.Text = "debug"
+Active_4.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_4.TextSize = 13.000
+Active_4.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
 
 fakeping.Name = "fakeping"
 fakeping.Parent = ScrollingFrame
@@ -334,6 +451,18 @@ fakeping.Size = UDim2.new(0, 248, 0, 81)
 
 UICorner_6.Parent = fakeping
 
+Active_5.Name = "Active"
+Active_5.Parent = fakeping
+Active_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_5.BackgroundTransparency = 1.000
+Active_5.Size = UDim2.new(0, 81, 0, 33)
+Active_5.Font = Enum.Font.Code
+Active_5.LineHeight = 1.300
+Active_5.Text = "fake ping"
+Active_5.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_5.TextSize = 13.000
+Active_5.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
+
 indicators.Name = "indicators"
 indicators.Parent = ScrollingFrame
 indicators.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
@@ -341,6 +470,18 @@ indicators.Position = UDim2.new(0.429773062, 0, 0.615668714, 0)
 indicators.Size = UDim2.new(0, 248, 0, 129)
 
 UICorner_7.Parent = indicators
+
+Active_6.Name = "Active"
+Active_6.Parent = indicators
+Active_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_6.BackgroundTransparency = 1.000
+Active_6.Size = UDim2.new(0, 88, 0, 33)
+Active_6.Font = Enum.Font.Code
+Active_6.LineHeight = 1.300
+Active_6.Text = "indicators"
+Active_6.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_6.TextSize = 13.000
+Active_6.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
 
 GeneralActive.Name = "GeneralActive"
 GeneralActive.Parent = AimbotTap
@@ -353,19 +494,62 @@ GeneralActive.Text = ""
 GeneralActive.TextColor3 = Color3.fromRGB(0, 0, 0)
 GeneralActive.TextSize = 12.000
 
-Active.Name = "Active"
-Active.Parent = GeneralActive
-Active.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Active.BackgroundTransparency = 1.000
-Active.Size = UDim2.new(0, 83, 0, 38)
-Active.Font = Enum.Font.Code
-Active.LineHeight = 1.300
-Active.Text = "general"
-Active.TextColor3 = Color3.fromRGB(190, 190, 190)
-Active.TextSize = 14.000
-Active.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
+Active_7.Name = "Active"
+Active_7.Parent = GeneralActive
+Active_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Active_7.BackgroundTransparency = 1.000
+Active_7.Size = UDim2.new(0, 83, 0, 38)
+Active_7.Font = Enum.Font.Code
+Active_7.LineHeight = 1.300
+Active_7.Text = "general"
+Active_7.TextColor3 = Color3.fromRGB(190, 190, 190)
+Active_7.TextSize = 14.000
+Active_7.TextStrokeColor3 = Color3.fromRGB(190, 190, 190)
 
 Frame.Parent = GeneralActive
 Frame.BackgroundColor3 = Color3.fromRGB(188, 158, 162)
 Frame.BorderSizePixel = 0
 Frame.Size = UDim2.new(0, 2, 0, 38)
+
+KeyBinds.Name = "KeyBinds"
+KeyBinds.Parent = ScreenGui
+KeyBinds.BackgroundColor3 = Color3.fromRGB(31, 31, 29)
+KeyBinds.Position = UDim2.new(0.832681715, 0, 0.0917992517, 0)
+KeyBinds.Size = UDim2.new(0, 182, 0, 33)
+KeyBinds.Visible = false
+KeyBinds.Draggable = true
+
+UICorner_8.Parent = KeyBinds
+
+RedLine.Name = "RedLine"
+RedLine.Parent = KeyBinds
+RedLine.BackgroundColor3 = Color3.fromRGB(179, 163, 166)
+RedLine.Position = UDim2.new(0, 0, 0.636363626, 0)
+RedLine.Size = UDim2.new(0, 182, 0, 1)
+
+TopRound.Name = "TopRound"
+TopRound.Parent = KeyBinds
+TopRound.BackgroundColor3 = Color3.fromRGB(40, 42, 41)
+TopRound.BorderSizePixel = 0
+TopRound.Position = UDim2.new(0, 0, 2.31193781e-07, 0)
+TopRound.Size = UDim2.new(0, 182, 0, 20)
+
+UICorner_9.Parent = TopRound
+
+TopFix.Name = "TopFix"
+TopFix.Parent = TopRound
+TopFix.BackgroundColor3 = Color3.fromRGB(40, 42, 41)
+TopFix.BorderSizePixel = 0
+TopFix.Position = UDim2.new(0, 0, 0.400000006, 0)
+TopFix.Size = UDim2.new(0, 182, 0, 12)
+
+PrimoTopText_8.Name = "PrimoTopText"
+PrimoTopText_8.Parent = KeyBinds
+PrimoTopText_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PrimoTopText_8.BackgroundTransparency = 1.000
+PrimoTopText_8.BorderSizePixel = 0
+PrimoTopText_8.Size = UDim2.new(0, 181, 0, 20)
+PrimoTopText_8.Font = Enum.Font.Code
+PrimoTopText_8.Text = "keybinds"
+PrimoTopText_8.TextColor3 = Color3.fromRGB(208, 210, 207)
+PrimoTopText_8.TextSize = 14.000
