@@ -1,0 +1,299 @@
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+--function ok
+function Tween(obj, speed, array, additional)
+	local add = additional or {Enum.EasingStyle.Linear, Enum.EasingDirection.Out}
+	local tween = TweenService:Create(obj, TweenInfo.new(speed, table.unpack(add)), array)
+	tween:Play()
+	tween.Completed:Wait()
+end
+
+local library = {}
+
+function library:createPP()
+	local Holdbleibtmitmirdienachtwach = Instance.new("ScreenGui")
+	local Background = Instance.new("Frame")
+	local BackgroundCorner = Instance.new("UICorner")
+	local SideFrame = Instance.new("Frame")
+	local SideFrameCorner = Instance.new("UICorner")
+	local ProfilePicture = Instance.new("ImageLabel")
+	local PfpCorner = Instance.new("UICorner")
+	local UserName = Instance.new("TextLabel")
+	local PaidFree = Instance.new("TextLabel")
+	local TapScrollingFrame = Instance.new("ScrollingFrame")
+	local PageActive = Instance.new("TextButton")
+	local TapCorner = Instance.new("UICorner")
+	local TapListLayout = Instance.new("UIListLayout")
+	local PageUnactive = Instance.new("TextButton")
+	local TapCorner_2 = Instance.new("UICorner")
+	local Pages = Instance.new("Folder")
+	local Page = Instance.new("ScrollingFrame")
+	local MainTapListLayout = Instance.new("UIListLayout")
+	local Button = Instance.new("TextButton")
+	local ButtonCorner = Instance.new("UICorner")
+	local ButtonText = Instance.new("TextLabel")
+	local Section = Instance.new("Frame")
+	local SectionCorner = Instance.new("UICorner")
+	local SectionText = Instance.new("TextLabel")
+	local Checkbox = Instance.new("Frame")
+	local CheckboxCorner = Instance.new("UICorner")
+	local CheckboxText = Instance.new("TextLabel")
+	local CheckboxOn = Instance.new("ImageLabel")
+	local WhiteinnerCheckboxOn = Instance.new("Frame")
+	local WhiteinnerRoundifyOn = Instance.new("UICorner")
+	local OnButton = Instance.new("TextButton")
+	local Checkbox2 = Instance.new("Frame")
+	local CheckboxCorner2 = Instance.new("UICorner")
+	local CheckboxText2 = Instance.new("TextLabel")
+	local CheckboxOff2 = Instance.new("ImageLabel")
+	local WhiteinnerCheckboxOff = Instance.new("Frame")
+	local WhiteinnerRoundifyOff = Instance.new("UICorner")
+	local OffButton = Instance.new("TextButton")
+	local Dropdown = Instance.new("Frame")
+	local Dropdowncorner = Instance.new("UICorner")
+	local Dropdowntext = Instance.new("TextLabel")
+	local Dropdownarrow = Instance.new("ImageLabel")
+	local Dropdownarrowbutton = Instance.new("TextButton")
+	local Slider = Instance.new("Frame")
+	local SliderText = Instance.new("TextLabel")
+	local SliderInner = Instance.new("Frame")
+	local SliderInnerCorner = Instance.new("UICorner")
+	local SliderInnerFill = Instance.new("Frame")
+	local SliderInnerFillCorner = Instance.new("UICorner")
+	local SliderCorner = Instance.new("UICorner")
+	local SliderText_2 = Instance.new("TextLabel")
+
+
+	Holdbleibtmitmirdienachtwach.Name = "Hold bleibt mit mir die nacht wach"
+	Holdbleibtmitmirdienachtwach.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Holdbleibtmitmirdienachtwach.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Background.Name = "Background"
+	Background.Parent = Holdbleibtmitmirdienachtwach
+	Background.BackgroundColor3 = Color3.fromRGB(25, 26, 31)
+	Background.Position = UDim2.new(0.287480682, 0, 0.285189688, 0)
+	Background.Size = UDim2.new(0, 550, 0, 350)
+
+	BackgroundCorner.Name = "BackgroundCorner"
+	BackgroundCorner.Parent = Background
+
+	SideFrame.Name = "SideFrame"
+	SideFrame.Parent = Background
+	SideFrame.BackgroundColor3 = Color3.fromRGB(17, 18, 21)
+	SideFrame.Size = UDim2.new(0, 151, 0, 350)
+
+	SideFrameCorner.Name = "SideFrameCorner"
+	SideFrameCorner.Parent = SideFrame
+
+	ProfilePicture.Name = "ProfilePicture"
+	ProfilePicture.Parent = SideFrame
+	ProfilePicture.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ProfilePicture.BackgroundTransparency = 1.000
+	ProfilePicture.Position = UDim2.new(0.112582773, 0, 0.0485714301, 0)
+	ProfilePicture.Size = UDim2.new(0, 50, 0, 50)
+	ProfilePicture.Image = "rbxassetid://10832968863"
+
+	PfpCorner.Name = "PfpCorner"
+	PfpCorner.Parent = ProfilePicture
+
+	UserName.Name = "UserName"
+	UserName.Parent = SideFrame
+	UserName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	UserName.BackgroundTransparency = 1.000
+	UserName.Position = UDim2.new(0.496688753, 0, 0.0657142848, 0)
+	UserName.Size = UDim2.new(0, 66, 0, 19)
+	UserName.Font = Enum.Font.SourceSansLight
+	UserName.Text = "User"
+	UserName.TextColor3 = Color3.fromRGB(255, 255, 255)
+	UserName.TextScaled = true
+	UserName.TextSize = 14.000
+	UserName.TextWrapped = true
+	UserName.TextXAlignment = Enum.TextXAlignment.Left
+
+	PaidFree.Name = "PaidFree"
+	PaidFree.Parent = SideFrame
+	PaidFree.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	PaidFree.BackgroundTransparency = 1.000
+	PaidFree.Position = UDim2.new(0.496688753, 0, 0.120000005, 0)
+	PaidFree.Size = UDim2.new(0, 66, 0, 19)
+	PaidFree.Font = Enum.Font.SourceSansLight
+	PaidFree.Text = "Premium"
+	PaidFree.TextColor3 = Color3.fromRGB(171, 171, 171)
+	PaidFree.TextSize = 14.000
+	PaidFree.TextWrapped = true
+	PaidFree.TextXAlignment = Enum.TextXAlignment.Left
+
+	TapScrollingFrame.Name = "TapScrollingFrame"
+	TapScrollingFrame.Parent = SideFrame
+	TapScrollingFrame.Active = true
+	TapScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TapScrollingFrame.BackgroundTransparency = 1.000
+	TapScrollingFrame.BorderSizePixel = 0
+	TapScrollingFrame.Position = UDim2.new(0.0662251636, 0, 0.237142861, 0)
+	TapScrollingFrame.Size = UDim2.new(0, 131, 0, 257)
+	TapScrollingFrame.ScrollBarThickness = 0
+
+	TapListLayout.Name = "TapListLayout"
+	TapListLayout.Parent = TapScrollingFrame
+	TapListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	TapListLayout.Padding = UDim.new(0, 8)
+	
+	Pages.Name = "Pages"
+	Pages.Parent = Background
+	
+	local Windows = {}
+	
+	function Windows:createPage(pagename, default)
+		Page.Name = "Page"
+		Page.Parent = Pages
+		Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Page.BackgroundTransparency = 1.000
+		Page.BorderSizePixel = 0
+		Page.Position = UDim2.new(0.294545442, 0, 0.0485714301, 0)
+		Page.Size = UDim2.new(0, 388, 0, 321)
+		Page.ScrollBarThickness = 5
+		Page.Visible = false
+		
+		if default == true then
+			Page.Visible = true
+		end
+		
+		PageActive.Name = "PageActive"
+		PageActive.Parent = TapScrollingFrame
+		PageActive.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		PageActive.BackgroundTransparency = 0.700
+		PageActive.Size = UDim2.new(0, 131, 0, 36)
+		PageActive.Font = Enum.Font.SourceSans
+		PageActive.Text = pagename or "Page"
+		PageActive.TextColor3 = Color3.fromRGB(255, 255, 255)
+		PageActive.TextSize = 18.000
+		PageActive.TextWrapped = true
+		PageActive.MouseButton1Down:Connect(function()
+			for i,v in next, Pages:GetChildren() do
+				v.Visible = false
+			end
+			Page.Visible = true
+		end)
+
+		TapCorner.Name = "TapCorner"
+		TapCorner.Parent = PageActive
+		
+		MainTapListLayout.Name = "MainTapListLayout"
+		MainTapListLayout.Parent = Page
+		MainTapListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		MainTapListLayout.Padding = UDim.new(0, 8)
+
+		local ItemHandling = {}
+
+		function ItemHandling:createSection(sectionText)
+		Section.Name = "Section"
+		Section.Parent = Page
+		Section.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		Section.BackgroundTransparency = 0.700
+		Section.Position = UDim2.new(0, 0, 0.180685461, 0)
+		Section.Size = UDim2.new(0, 376, 0, 50)
+
+		SectionCorner.Name = "SectionCorner"
+		SectionCorner.Parent = Section
+
+		SectionText.Name = "SectionText"
+		SectionText.Parent = Section
+		SectionText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		SectionText.BackgroundTransparency = 1.000
+		SectionText.Size = UDim2.new(0, 376, 0, 50)
+		SectionText.Font = Enum.Font.SourceSansBold
+		SectionText.Text = sectionText or "Section"
+		SectionText.TextColor3 = Color3.fromRGB(213, 213, 213)
+		SectionText.TextSize = 19.000
+	end
+	
+	function ItemHandling:createButton(buttonname, callback)
+		local callback = callback or function() end
+		
+		Button.Name = "Button"
+		Button.Parent = Page
+		Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		Button.BackgroundTransparency = 0.700
+		Button.Position = UDim2.new(0, 0, 9.21981211e-08, 0)
+		Button.Size = UDim2.new(0, 376, 0, 50)
+		Button.Font = Enum.Font.SourceSans
+		Button.Text = ""
+		Button.TextColor3 = Color3.fromRGB(213, 213, 213)
+		Button.TextSize = 19.000
+
+		ButtonCorner.Name = "ButtonCorner"
+		ButtonCorner.Parent = Button
+
+		ButtonText.Name = "ButtonText"
+		ButtonText.Parent = Button
+		ButtonText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonText.BackgroundTransparency = 1.000
+		ButtonText.Position = UDim2.new(0.0452127643, 0, 0, 0)
+		ButtonText.Size = UDim2.new(0, 359, 0, 50)
+		ButtonText.Font = Enum.Font.SourceSans
+		ButtonText.Text = buttonname or "Button"
+		ButtonText.TextColor3 = Color3.fromRGB(213, 213, 213)
+		ButtonText.TextSize = 19.000
+		ButtonText.TextXAlignment = Enum.TextXAlignment.Left
+		
+		local debounce = false
+		local debounce1 = false
+		Button.MouseButton1Click:Connect(function()
+			if not debounce then
+				debounce = true
+				callback()
+				wait(0.1)
+				debounce = false
+			end
+			pcall(callback)
+		end)
+	end
+
+		return ItemHandling
+	end
+	
+	
+
+
+	local dragToggle = nil
+	local dragSpeed = 0.1
+	local dragStart = nil
+	local startPos = nil
+
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		Tween(Background, dragSpeed, {Position = position})
+	end
+
+	Background.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = Background.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+		
+		return Pagee
+		
+	end)
+	
+	return Windows
+	
+end
