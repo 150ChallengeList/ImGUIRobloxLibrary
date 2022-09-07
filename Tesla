@@ -61,7 +61,7 @@ function TeslaLib.CreateWindow()
     Username.Position = UDim2.new(0.40697673, 0, 0.0406503975, 0)
     Username.Size = UDim2.new(0, 91, 0, 26)
     Username.Font = Enum.Font.SourceSansLight
-    Username.Text = "Username"
+    Username.Text = game:GetService("Players").LocalPlayer.Name
     Username.TextColor3 = Color3.fromRGB(227, 227, 227)
     Username.TextScaled = true
     Username.TextSize = 14.000
