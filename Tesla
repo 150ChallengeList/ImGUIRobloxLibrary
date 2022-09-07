@@ -49,7 +49,7 @@ function TeslaLib.CreateWindow()
     Icon.BackgroundTransparency = 1.000
     Icon.Position = UDim2.new(0.064086318, 0, 0.0449186116, 0)
     Icon.Size = UDim2.new(0, 50, 0, 50)
-    Icon.Image = "rbxassetid://10847390833"
+    Icon.Image = "rbxassetid://10849329353"
     
     IconCorner.Name = "IconCorner"
     IconCorner.Parent = Icon
